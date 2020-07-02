@@ -12,7 +12,7 @@ def main():
         scene = part[0]
     
     test = '1'
-    num = test.zfill(2)
+    num = test.zfill(3)
     imageShape = pm.imagePlane()
     imageFile = pm.listRelatives(imageShape, p = True)
     pm.rename(imageFile, '_'.join( ['image','file',scene,num]))

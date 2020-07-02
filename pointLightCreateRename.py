@@ -11,7 +11,7 @@ def main():
     else:
         scene = part[0]
     
-    num = '1'.zfill(2)
+    num = '1'.zfill(3)
     lightShape = pm.pointLight( n = '_'.join( ['ptl','cut',scene,num]) )
     light = pm.listRelatives(lightShape, p = True)
     grp = '_'.join( ['grp','lit',scene] )
