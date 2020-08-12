@@ -15,7 +15,7 @@ def main():
     num = test.zfill(3)
     imageShape = pm.imagePlane()
     imageFile = pm.listRelatives(imageShape, p = True)
-    pm.rename(imageFile, '_'.join( ['image','file',scene,num]))
+    pm.rename(imageFile, '_'.join( ['image','file',scene,'C',num]))
     grp = '_'.join( ['grp','gud',scene] )
     if pm.objExists(grp):
         pm.parent(imageFile[0], grp)

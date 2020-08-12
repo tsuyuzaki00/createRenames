@@ -15,8 +15,8 @@ def jointCreate(num,pos):
         scene = part[0]
     
     sels = pm.selected()
-    rootName = '_'.join( ['jnt','root',scene,pos] )
-    hiyJntName = '_'.join( ['jnt','jointA',scene,pos] )
+    rootName = '_'.join( ['jnt','root',scene,pos,'00'] )
+    hiyJntName = '_'.join( ['jnt','joint',scene,pos,'00'] )
     
     if sels == []:
         jnt = pm.joint(rad= 0.5, n = rootName)
@@ -25,12 +25,10 @@ def jointCreate(num,pos):
             pm.parent(jnt, grpJnt)
             
     elif pm.objExists(hiyJntName):
-        for i in range(26):
-            hiyJntName = '_'.join( ['jnt','joint' + chr(65+i),scene,pos] )
+        for i in range(1000):
+            hiyJntName = '_'.join( ['jnt', 'joint', scene, pos, str(i).zfill(2)] )
             if not pm.objExists(hiyJntName):
                 jnt = pm.joint(r = True, p = (2,0,0), rad= 0.5, n = hiyJntName)
                 break
     else:
-        jnt = pm.joint(r = True, p = (2,0,0), rad= 0.5, n = hiyJntName)        
-        
-main()
+        jnt = pm.joint(r = True, p = (2,0,0), rad= 0.5, n = hiyJntName)

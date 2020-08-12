@@ -12,9 +12,9 @@ def main():
         scene = part[0]
         
     num = '1'.zfill(3)
-    camShape = pm.camera( n = '_'.join( ['cam','cut',scene,num]) )
+    camShape = pm.camera( n = '_'.join( ['cam','cut',scene,'C',num]) )
     cam = pm.listRelatives(camShape, p = True)
-    pm.rename(cam, '_'.join( ['cam','cut',scene,num] ))
+    pm.rename(cam, '_'.join( ['cam','cut',scene,'C',num] ))
     grp = '_'.join( ['grp','cam',scene] )
     if pm.objExists(grp):
         pm.parent(cam, grp)

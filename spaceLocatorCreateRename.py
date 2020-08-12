@@ -12,7 +12,7 @@ def main():
         scene = part[0]
         
     pos = 'C'
-    locator = pm.spaceLocator( n = '_'.join( ['lct','help',scene,pos]) )
+    locator = pm.spaceLocator( n = '_'.join( ['lct','help',scene,'C',pos]) )
     grpGuide = '_'.join( ['grp','guide',scene] )
     if pm.objExists(grpGuide):
         pm.parent(locator, grpGuide)

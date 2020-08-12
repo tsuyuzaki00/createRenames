@@ -12,7 +12,7 @@ def main():
         scene = part[0]
         
     num = '1'.zfill(3)
-    model = pm.polyCube(n = '_'.join( ['geo','model',scene,num]) )
+    model = pm.polyCube(n = '_'.join( ['geo','model',scene,'C',num]) )
     pm.polySmooth(dv = 2)
     grpGeo = '_'.join( ['grp','geo',scene] )
     if pm.objExists(grpGeo):

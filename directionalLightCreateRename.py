@@ -12,7 +12,7 @@ def main():
         scene = part[0]
     
     num = '1'.zfill(3)
-    lightShape = pm.directionalLight( n = '_'.join( ['dtl','cut',scene,num]) )
+    lightShape = pm.directionalLight( n = '_'.join( ['dtl','cut',scene,'C',num]) )
     light = pm.listRelatives(lightShape, p = True)
     grp = '_'.join( ['grp','lit',scene] )
     if pm.objExists(grp):
