@@ -1,3 +1,4 @@
+import mainEdit.templateName as tpn
 import pymel.core as pm
 
 def main():
@@ -12,7 +13,10 @@ def main():
         scene = part[0]
         
     num = '1'.zfill(3)
-    model = pm.polyCube(n = '_'.join( ['geo','model',scene,'C',num]) )
+    model = pm.polyCube(n = '_'.join( ['C','model','geo',scene,num]) )
     grpGeo = '_'.join( ['grp','geo',scene] )
     if pm.objExists(grpGeo):
         pm.parent(model[0], grpGeo)
+
+main()
+#tpn.name(obj = '', node = '', pos = '', num = '', scene = '')
