@@ -18,5 +18,4 @@ def main():
     if pm.objExists(grpGeo):
         pm.parent(model[0], grpGeo)
 
-main()
 #tpn.name(obj = '', node = '', pos = '', num = '', scene = '')
